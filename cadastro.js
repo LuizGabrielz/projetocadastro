@@ -14,7 +14,7 @@ function start() {
 function pause() {
     clearInterval(cron);
 
-}
+} 
 
 function stop() {
     clearInterval(cron);
