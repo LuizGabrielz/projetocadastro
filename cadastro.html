@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro De Atividades</title>
+    <script src="/cadastro.js"></script>      
+
+</head> 
+<body>
+    <form class="form" method="get">
+        <p>Usuário: <input type="text" class="nomeusuario"></p>
+        <p>Atividade: <input type="text" class="nomeatividade"></p>
+        <p>Tipo da Atividade: <input type="text" class="tipoatividade"></p>
+    </form> 
+    <div class="max-width">
+        <button onclick="start();" class="bg-green">Inicializar</button>
+        <button onclick="pause();" class="bg-yellow">Pausar</button>
+        <button onclick="stop();" class="br-red">Finalizar</button>
+        <h1 id="counter">00:00:00</h1>
+    </div>  
+    </form>
+  
+    <div class="resultado"></div>
+
+    <div class="content">
+        <table border="2" id="tabela">  
+
+            <thead>
+                <tr class="tr-cabecalho">
+                    <th>Nome usuário</th>
+                    <th>Atividade</th>
+                    <th>Tipo da Atividade</th>
+                </tr>
+            </thead>
+
+            <tbody class="test">
+
+            </tbody>
+        </table>
+    </div>
+
+  
+</body>
+</html>
