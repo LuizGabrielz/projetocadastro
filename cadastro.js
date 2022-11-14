@@ -1,62 +1,57 @@
-"use strict"
-
-var hh = 0;
-var mm = 0;
-var ss = 0;
-
-var tempo = 50;
-var cron; 
-
-function start() {
-    cron =setInterval(() => {timer(); }, tempo);
+function criaHoraDosSegundos(segundos) {
+    const data = new Date(segundos * 1000);
+    return data.toLocaleTimeString('pt-BR', {
+        hour12: false,
+        timeZone: 'UTC'
+    });
 }
+const relogio = document.querySelector('.relogio');
+const iniciar = document.querySelector('.iniciar');
+const pausar = document.querySelector('.pausar');
+const finalizar = document.querySelector('.finalizar');
+let segundos = 0;
+let timer;
 
-function pause() {
-    clearInterval(cron);
-
-} 
-
-function stop() {
-    clearInterval(cron);
-    hh = 0;
-    mm = 0;
-    ss = 0;
-
-    document.getElementById('counter').innerText = '00:00:00';
+function iniciaRelogio() {
+    timer = setInterval(function() {
+        segundos++;
+        relogio.innerHTML = criaHoraDosSegundos(segundos);
+    }, 1000)
+    
 }
+ 
+iniciar.addEventListener('click', function(event) { 
+    relogio.classList.remove('pausado'); 
+    clearInterval(timer);
+    iniciaRelogio(); 
+});   
 
-function timer() { 
-    ss++;
+pausar.addEventListener('click', function(event) {
+    clearInterval(timer);
+    relogio.classList.add('pausado');
+});
 
-    if(ss == 60) {
-        ss = 0;
-        mm++;
+finalizar.addEventListener('click', function(event) {
+    
 
-        if (mm == 60) { 
-            mm = 0;
-            hh++;
-        } 
-    }  
+});    
 
-    var format = (hh < 10 ? '0' + hh : hh) + ':' + (mm < 10 ? '0' + mm : mm) + ':' + (ss < 10 ? '0' + ss : ss)
-    document.getElementById('counter').innerText = format; 
-}
-   
 $(function(){
 
-    var copia = document.querySelector("#tabela tbody").outerHTML;
+    const tbody = document.querySelector(".teste");
 
-    $(".form button").on("click", function(){
+    $(".finalizar").on("click", function(){
      const form = document.querySelector('.form');
-        var atividade = [];
+        var tabelaatividade = [];
 
-        const nomeusuario = form.querySelector('.nomeusuario');
-        const nomeatividade = form.querySelector('.nomeatividade');
-        const tipoatividade = form.querySelector('.tipoatividade');
-
-        atividade.push({
-            nomeusuario: nomeusuario.value,
-            nomeatividade: nomeatividade.value,
+        const usuario = form.querySelector('#usuario');
+        const atividade = form.querySelector('#atividade');
+        const tipoatividade = form.querySelector('#tipoatividade');
+      
+        
+        tabelaatividade.push({
+            usuario: usuario.value,
+            atividade: atividade.value,
             tipoatividade: tipoatividade.value
 
         }); 
@@ -64,9 +59,10 @@ $(function(){
         var row = tbody.insertRow(0);
                 row.innerHTML = `
                 <tr>
-                <td>${nomeusuario.value}</td> 
-                <td>${nomeatividade.value}</td>  
+                <td>${usuario.value}</td> 
+                <td>${atividade.value}</td>  
                 <td>${tipoatividade.value}</td>  
                 </tr> `    
     });  
 })
+ 
