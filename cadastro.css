@@ -21,7 +21,18 @@ body {
     background: #fff;    
     padding: 20px;
     border-radius: 10px;
+    display: flex;
 
+}
+
+.form-container {
+    display: flex;
+}
+
+form.input, form label {
+    display: block;
+    width: 50%;
+    margin-bottom: 10px;
 }
 
 form.input {
@@ -29,14 +40,20 @@ form.input {
     font-size: 1em;
     border-radius: 5px;
 }
-
+    
+  
 form input:focus {
     outline: 1px solid var(--primary-color);
 }     
 
 img {
-    margin: auto;
-    display: block;
+   max-width:100px;
+   max-height:150px;
+   width: auto;
+   height: auto;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;      
 }
 
 .pausado {   
@@ -46,7 +63,7 @@ img {
 .iniciar {
     font-family: arial;
     font-size: 14px;
-    text-transform: uppercase;
+    text-transform: uppercase; 
     font-weight:700;
     border:none;
     padding:10px;
@@ -56,7 +73,8 @@ img {
 } 
 
 .btn-green {
-    background: green;
+    
+    border-radius: 50%;
     color:#fff;
     box-shadow:0 5px 0 #006000 ;
 }
@@ -116,4 +134,8 @@ img {
     position: relative;
     top:5px;
     box-shadow:none;
+}
+ 
+header {
+    background-color: #fff;
 }

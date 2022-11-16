@@ -7,12 +7,12 @@
     <title>Cadastro De Atividades</title>
     <link rel="stylesheet" href="/cadastro.css"></link>  
     <script defer src="/cadastro.js"></script>      
-    <img src="img/image.png">
- 
+    
 </head>  
 <body>
+    <header><img src="./img/image.png"></header> 
 
-    <section class="container">
+    <section class="container"> 
          
     <form class="form" method="get">
         <label for="input-teste1">Usuário</label> 
@@ -22,36 +22,33 @@
         <input type="text" id="atividade">
 
         <label for="input-teste3">Tipo De Atividade</label>
-        <input type="text" id="tipoatividade">   
+        <input type="text" id="tipoatividade">  
 
-   
-    </form>    
+        <p class="relogio">00:00:00</p>                  
+ 
+    </form>     
+
+    <section class="container">
     
-    <p class="relogio">00:00:00</p>
-
     <p>
-        <button class="iniciar btn-green">iniciar</button>
+        <button class="iniciar btn-green"><img src="./img/Vector (1).png" alt="botãoplay"></button>
         <button class="pausar btn-yellow">pausar</button>
         <button class="finalizar btn-red">finalizar</button>
-    </p>
+    </p>    
     
-     
+</section>
+
 </section>
 
     <section class="container">
         <table borde="2" id="tabela">
 
-            <thead>
-                <tr class="tr-cabecalho">
-                    <th>Usuário</th>
-
-                    <th>Atividade</th>
-
-                    <th>Tipo De Atividade</th>
-
-                    <th>Tempo</th>
-                </tr>
-            </thead>
+            <tr>
+                <td><button class="Usuário">Usuário</button></td>
+                <td><button class="atividade">Atividade</button></td>
+                <td><button class="tipoatividade">Tipo De Atividade</button></td>
+                <td><button class="tempo">Tempo</button></td> 
+            </tr>
             <tbody class="teste">
 
             </tbody>
