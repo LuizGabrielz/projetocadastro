@@ -9,6 +9,7 @@ const relogio = document.querySelector('.relogio');
 const iniciar = document.querySelector('.iniciar');
 const pausar = document.querySelector('.pausar');
 const finalizar = document.querySelector('.finalizar');
+var tabelaatividade = []; 
 let segundos = 0;
 let timer; 
 
@@ -35,15 +36,14 @@ finalizar.addEventListener('click', function(event) {
  
     
 });     
- 
+
+
 $(function(){
 
     const tbody = document.querySelector(".teste");
 
     $(".finalizar").on("click", function(){
      const form = document.querySelector('.form'); 
-
-        var tabelaatividade = []; 
 
         const usuario = form.querySelector('#usuario');
         const atividade = form.querySelector('#atividade');
@@ -54,11 +54,12 @@ $(function(){
             usuario: usuario.value,
             atividade: atividade.value,
             tipoatividade: tipoatividade.value, 
+            relogio: relogio.innerHTML
             
         
         });
 
-        var row = tbody.insertRow(0);
+        var row = tbody.insertRow(0); 
                 row.innerHTML = `
                 <tr>
                 <td>${usuario.value}</td> 
@@ -67,6 +68,37 @@ $(function(){
                 <td>${relogio.innerHTML}</td>   
                 </tr> `    
     });  
-})
- 
-   
+}) 
+
+
+// funcao ordenar
+
+function Ordernar() {
+  var arrayOrdenado = array.sort()
+  
+  const tbody = document.querySelector(".teste");
+
+  for  (var i = 0; i < arrayOrdenado.length; i++)  {
+
+  };
+    
+
+
+  var row = tbody.insertRow(0); 
+    row.innerHTML = `
+    <tr>
+    <td>${usuario}</td> 
+    <td>${atividade}</td>  
+    <td>${tipoatividade}</td>   
+    <td>${relogio}</td>   
+    </tr> `    
+  }
+
+
+
+
+
+
+
+
+
