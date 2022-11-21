@@ -31,9 +31,14 @@ pausar.addEventListener('click', function(event) {
     clearInterval(timer);
     relogio.classList.add('pausado');
 });
-  
 
-
+finalizar.addEventListener('click', function(event) {
+  clearInterval(timer);
+    relogio.classList.add('finaliza'); 
+});     
+    
+ 
+ 
 
 var teste = 0;
 
