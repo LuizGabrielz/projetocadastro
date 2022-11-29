@@ -36,7 +36,7 @@ body {
 
 .form-container {
     display: flex;
-}
+} 
 
 form.input, form label {
     display: block;
@@ -55,7 +55,7 @@ form input:focus {
     outline: 1px solid var(--primary-color);
 }     
 
-img {
+img { 
    max-width:100px;
    max-height:150px;
    width: auto;
@@ -126,7 +126,7 @@ img {
     color:#fff;
     box-shadow:0 5px 0 #a31e1e;
 }
-   
+    
 .btn-red {
     border-radius: 50%;
     color:#fff;

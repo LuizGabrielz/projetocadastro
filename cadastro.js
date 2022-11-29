@@ -1,8 +1,8 @@
 function criaHoraDosSegundos(segundos) {
     const data = new Date(segundos * 1000);
     return data.toLocaleTimeString('pt-BR', {
-        hour12: false,
-        timeZone: 'UTC'
+        hour12: false, 
+        timeZone: 'UTC' 
     });
 }
 const relogio = document.querySelector('.relogio');
@@ -32,14 +32,7 @@ pausar.addEventListener('click', function(event) {
     relogio.classList.add('pausado');
 });
 
-finalizar.addEventListener('click', function(event) {
-  clearInterval(timer);
-    relogio.classList.add('finaliza'); 
-});     
-    
  
- 
-
 var teste = 0;
 
 function salvarDados(){
@@ -69,26 +62,30 @@ function salvarDados(){
     tr.appendChild(td3);
     tr.appendChild(td4);        
     tr.appendChild(btn);
-    tr.id = 'linha' + teste; 
+    tr.id = 'linha' + teste;   
     teste++;
     document.getElementById("tabela").appendChild(tr);
 
+
+    relogio.innerHTML = criaHoraDosSegundos(0);
+    clearInterval(timer);
     limparCampos();
+
   }else {
     alert('Todos os campos precisam estar preenchidos !!');
     }
 }
 function limparCampos(){
-  var usuario     = document.getElementById("nome");
-  var atividade      = document.getElementById("valor");
-  var tipoatividade = document.getElementById("vencimento");
-  relogio.innerHTML
+  var usuario = document.getElementById("usuario");
+  var atividade = document.getElementById("atividade");
+  var tipoatividade = document.getElementById("tipoatividade");
   
   
-  usuario.value       = '';
-  atividade.value      = '';
+  
+  usuario.value = '';
+  atividade.value = '';
   tipoatividade.value = '';
-  relogio.innerHTML  = '';
+  
 }
 
 function deletar(botao) {
@@ -97,7 +94,11 @@ function deletar(botao) {
  tabela.deleteRow(botao.parentNode.rowIndex); 
 
 }
- 
+
+
+
+
+
 
 
  
