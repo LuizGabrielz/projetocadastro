@@ -59,7 +59,7 @@ function salvarDados(){
 
     tr.appendChild(td1); 
     tr.appendChild(td2);
-    tr.appendChild(td3);
+    tr.appendChild(td3); 
     tr.appendChild(td4);        
     tr.appendChild(btn);
     tr.id = 'linha' + teste;   
@@ -86,7 +86,18 @@ function limparCampos(){
   atividade.value = '';
   tipoatividade.value = '';
   
-}
+}  
+
+function bloquearCampos(){
+  var usuario = document.getElementById('usuario');
+  var atividade = document.getElementById('atividade');
+  var tipoatividade = document.getElementById('tipoatividade');
+
+
+  usuario.value = '';
+  atividade.value = '';
+  tipoatividade.value = '';
+} 
 
 function deletar(botao) {
   var tabela = document.getElementById('tabela');
@@ -95,22 +106,39 @@ function deletar(botao) {
 
 }
 
-
-
-
-
-
-
+function sortTable() {
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById("tabela"); 
+  switching = true;
  
+  while (switching) {
+    switching = false;
+    rows = table.rows;
+   
+    for (i = 1; i < (rows.length - 1); i++) {
+     
+      shouldSwitch = false;
+     
+      x = rows[i].getElementsByTagName("TD")[0];
+      y = rows[i + 1].getElementsByTagName("TD")[0];
+     
+      if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+        
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+     
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+}  
 
+var somarNomes = document.querySelector('.teste')
 
-
-
-
-
-
-
-
-
-
+for (let i = 0; i < somarNomes.length; i++) {
+    
+}
 

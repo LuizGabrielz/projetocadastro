@@ -27,7 +27,7 @@
     </section> 
 
     <section class="container">   
-          
+            
     <form class="form" method="get">
 
          <label for="input-usuario">Usuário</label> 
@@ -39,7 +39,7 @@
         <label for="input-tipoatividade">Tipo De Atividade</label>
         <input type="text" id="tipoatividade">   
         
-    </form>     
+    </form>      
    
        <section class="container-relogio">        
        
@@ -50,9 +50,7 @@
         <button class="iniciar btn-green"><img src="./img/Vector (1).png" alt="botãoplay"></button>
         <button class="pausar btn-yellow"><img src="./img/Vector (2).png" alt="botãoplay"></button>
         <button class="botao-salvar" onclick="salvarDados()"><img src="./img/Vector (3).png" alt="botãoplay"></button> 
-           
-
-              
+                
     </div>      
       
 </section>       
@@ -63,26 +61,26 @@
 
         <table id="tabela">
 
-                <td><button class="Usuário" onClick="byUsuario">Usuário</button></td>
-                <td><button class="atividade" onClick="byAtividade">Atividade</button></td>
-                <td><button class="tipoatividade" onClick="byTipoatividade">Tipo De Atividade</button></td>
-                <td><button class="tempo" onClick="byTempo">Tempo</button></td>   
-               
-            
-            <tbody class="teste"> 
-                <tr>
+                <td><button onclick="sortTable()">Usuário</button></td>
+                <td><button onclick="sortTable()">Atividade</button></td>
+                <td><button onclick="sortTable()">Tipo De Atividade</button></td>
+                <td><button onclick="sortTable()">Tempo</button></td>      
+                
+            <tbody class="teste">  
+
+                <thead>  
+                
                     <td></td>
                     <td></td>
-                </tr>
-                <tr>
+                
                     <td></td>
                     <td></td>
-                </tr>
+                
+            </thead>
                    
  
             </tbody>
         </table>
     </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </body>
 </html>
