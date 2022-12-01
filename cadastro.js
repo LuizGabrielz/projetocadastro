@@ -12,14 +12,14 @@ const finalizar = document.querySelector('.finalizar');
 var tabelaatividade = []; 
 let segundos = 0;
 let timer; 
-
+ 
 function iniciaRelogio() {
     timer = setInterval(function() {
         segundos++;
         relogio.innerHTML = criaHoraDosSegundos(segundos);
     }, 1000) 
     
-}
+}   
  
 iniciar.addEventListener('click', function(event) { 
     relogio.classList.remove('pausado'); 
@@ -31,14 +31,14 @@ pausar.addEventListener('click', function(event) {
     clearInterval(timer);
     relogio.classList.add('pausado');
 });
-
+   
  
 var teste = 0;
 
 function salvarDados(){
-  var usuario  = document.getElementById("usuario").value;
-  var atividade     = document.getElementById("atividade").value;
-  var tipoatividade = document.getElementById("tipoatividade").value;
+  var usuario  = document.getElementById("input-usuario").value;
+  var atividade     = document.getElementById("input-atividade").value;
+  var tipoatividade = document.getElementById("input-tipoatividade").value;  
     
   
 
@@ -70,18 +70,19 @@ function salvarDados(){
     relogio.innerHTML = criaHoraDosSegundos(0);
     clearInterval(timer);
     limparCampos();
+    bloquearCampos();
 
   }else {
     alert('Todos os campos precisam estar preenchidos !!');
-    }
+    } 
 }
 function limparCampos(){
-  var usuario = document.getElementById("usuario");
-  var atividade = document.getElementById("atividade");
-  var tipoatividade = document.getElementById("tipoatividade");
+  var usuario = document.getElementById("input-usuario");
+  var atividade = document.getElementById("input-atividade");
+  var tipoatividade = document.getElementById("input-tipoatividade");
   
-  
-  
+   
+    
   usuario.value = '';
   atividade.value = '';
   tipoatividade.value = '';
@@ -89,14 +90,15 @@ function limparCampos(){
 }  
 
 function bloquearCampos(){
-  var usuario = document.getElementById('usuario');
-  var atividade = document.getElementById('atividade');
-  var tipoatividade = document.getElementById('tipoatividade');
+  var usuario = document.getElementById("input-usuario");
+  var atividade = document.getElementById("input-atividade");
+  var tipoatividade = document.getElementById("input-tipoatividade");
 
 
   usuario.value = '';
   atividade.value = '';
   tipoatividade.value = '';
+
 } 
 
 function deletar(botao) {
@@ -109,7 +111,7 @@ function deletar(botao) {
 function sortTable() {
   var table, rows, switching, i, x, y, shouldSwitch;
   table = document.getElementById("tabela"); 
-  switching = true;
+  switching = true; 
  
   while (switching) {
     switching = false;
