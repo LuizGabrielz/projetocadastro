@@ -25,6 +25,7 @@ iniciar.addEventListener('click', function(event) {
     relogio.classList.remove('pausado'); 
     clearInterval(timer);
     iniciaRelogio(); 
+    
 });   
  
 pausar.addEventListener('click', function(event) {
@@ -69,44 +70,30 @@ function salvarDados(){
 
     relogio.innerHTML = criaHoraDosSegundos(0);
     clearInterval(timer);
-    limparCampos();
-    bloquearCampos();
-
+    limparCampos(); 
+    
   }else {
     alert('Todos os campos precisam estar preenchidos !!');
     } 
 }
+
 function limparCampos(){
   var usuario = document.getElementById("input-usuario");
   var atividade = document.getElementById("input-atividade");
   var tipoatividade = document.getElementById("input-tipoatividade");
-  
-   
-    
-  usuario.value = '';
-  atividade.value = '';
-  tipoatividade.value = '';
-  
-}  
-
-function bloquearCampos(){
-  var usuario = document.getElementById("input-usuario");
-  var atividade = document.getElementById("input-atividade");
-  var tipoatividade = document.getElementById("input-tipoatividade");
-
 
   usuario.value = '';
   atividade.value = '';
   tipoatividade.value = '';
-
-} 
+  
+}   
 
 function deletar(botao) {
   var tabela = document.getElementById('tabela');
   
  tabela.deleteRow(botao.parentNode.rowIndex); 
 
-}
+} 
 
 function sortTable() {
   var table, rows, switching, i, x, y, shouldSwitch;
@@ -137,10 +124,3 @@ function sortTable() {
     }
   }
 }  
-
-var somarNomes = document.querySelector('.teste')
-
-for (let i = 0; i < somarNomes.length; i++) {
-    
-}
-

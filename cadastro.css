@@ -15,15 +15,16 @@ body {
     line-height: 1.5em;
 } 
 
-.container { 
+.container {   
     max-width: 640px;
     margin: 50px auto;
     background: #fff;    
     padding: 20px;
     border-radius: 10px;
     display: flex; 
-    justify-content: space-around;
-
+    justify-content: space-around;    
+    width: 7000px;
+    height: auto;  
 }
 
 .container-relogio {
@@ -33,7 +34,7 @@ body {
     margin-left: 100px;
     font-size: 40px;
     display: 50px; 
- 
+    
 }
 
 .formulario {
@@ -42,13 +43,13 @@ body {
     align-items: center;
     padding: 50px;
     width: 500px;
-} 
+}  
 
 .div-usuario,
 .div-atividade,
 .div-tipoatividade {
-    float: left;
-    width: 30%;
+ float: left;
+ width: 30%;
 }  
 
 .inputs { 
@@ -81,6 +82,7 @@ body {
   border-radius: 5px;
   color: #000000; 
   justify-content: space-between;
+  
 }
  
 

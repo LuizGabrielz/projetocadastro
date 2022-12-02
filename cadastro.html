@@ -10,20 +10,28 @@
     
 </head>   
 <body>
-    <header><img src="./img/image.png"></header>  
+    <header><img src="./img/image.png"></header>     
 
-    <section class="container">
+    <section class="container"> 
 
         <form class="cabecario" method="get">
 
             <label for="input-buscar"></label>
             <input type="text" id="buscar" placeholder="Buscar..">
 
-            <label for="input-filtrar"></label>
-            <input type="text" id="filtrar" placeholder="Filtrar">
+            <select name="filtrar" id="Filtrarnome" onchange="selectFunction()">
+                <option value="filtrar">Filtrar</option>
+                <option value="usuario">Usuário</option>
+                <option value="Atividade">Atividade</option>
+                <option value="tipoAtividade">Tipo de Atividade</option>
+                <option value="tempo">Tempo</option>
+              </select>
+              <div class="limpar">
+             <label for="filtrar"></label>  
+             </div>
         </form>
          
-    </section>  
+    </section>   
  
     <section class="container">  
  
@@ -40,12 +48,11 @@
         </div>
 
         <div class="div-tipoatividade">
-            <label for="input-tipoatividade">Tipo De Atividade</label>
+            <label for="input-tipoatividade">TipoAtividade</label>
             <input type="text" id="input-tipoatividade">
         </div>    
 
     </form>
-
 
        <section class="container-relogio">         
        
@@ -78,13 +85,9 @@
                 
                     <td></td>
                     <td></td>
-                
-                    <td></td>
-                    <td></td>
-                
+
             </thead>
-                   
- 
+                
             </tbody>
         </table>
     </section>
